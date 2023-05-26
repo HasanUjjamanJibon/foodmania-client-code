@@ -29,14 +29,20 @@ const router = createBrowserRouter([
       },
       {
         path: "reciepe/:id",
-        element: (
-          <PrivateRoute>
-            <ChefReciepe></ChefReciepe>,
-          </PrivateRoute>
-        ),
+        element: <ChefReciepe></ChefReciepe>,
         loader: ({ params }) =>
           fetch(`https://food-reciepe-server.vercel.app/chef/${params.id}`),
       },
+      // {
+      //   path: "reciepe/:id",
+      //   element: (
+      //     <PrivateRoute>
+      //       <ChefReciepe></ChefReciepe>,
+      //     </PrivateRoute>
+      //   ),
+      //   loader: ({ params }) =>
+      //     fetch(`https://food-reciepe-server.vercel.app/chef/${params.id}`),
+      // },
       {
         path: "login",
         element: <Login />,
